@@ -1,0 +1,50 @@
+{%  extends "templates/web.html" %}
+
+
+
+
+{% block title %}{{ _(" Home Page ") }}{% endblock %}
+
+{% block page_content %}
+
+<head>
+  <title>Feedback Rating</title>
+  <style>
+    .container {
+      width: 500px;
+      margin: 0 auto;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      margin-top: 50px;
+      font-size: 36px;
+    }
+
+    p {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .btn {
+      margin-top: 50px;
+      padding: 10px 20px;
+      background-color: #0070c0;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the Feedback Rating Page</h1>
+    <p>We would like to hear your thoughts on our service. Please take a moment to rate your experience and leave a comment.</p>
+    <a href="/rating/smiley.html" class="btn">Rate Now</a>
+  </div>
+</body>
+
+{% endblock %}

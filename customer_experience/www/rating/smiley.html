@@ -1,0 +1,156 @@
+{% extends "templates/web.html" %}
+{% block title %}{{ (" Smiley ") }}{% endblock %}
+{% block page_content %}
+
+
+<head>
+
+
+
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: sans-serif;
+		}
+
+		.form_container {
+			padding: 20px;
+			width: 800px;
+			margin: auto;
+			background-color: #fefefe;
+			border-radius: 10px;
+		}
+
+		.input-hidden {
+			/* For Hiding Radio Button Circles */
+			position: absolute;
+			left: -9999px;
+		}
+
+		.input_field {
+			width: 100%;
+			padding: 10px;
+			margin-top: 10px;
+			border-radius: 10px;
+			border: 1px solid #000;
+		}
+
+		.smileyOptions {
+			background-color: white;
+			margin-top: 10px;
+			padding: 10px;
+			display: flex;
+
+			/* grid-template-columns: 1fr 1fr 1fr;
+			justify-items: center;
+			align-items: center; 
+			justify-content: space-evenly;*/
+		}
+
+		.smileyOptions .image-wrap {
+			margin: 20px;
+			cursor: pointer;
+		}
+
+		.smileyOptions .inner-wrap {
+			margin: -20px;
+		}
+
+		.smileyOptions img:hover {
+			transform: translateX(-3%) translateY(calc(-20% - 1px))
+		}
+
+		/* .smileyOptions img:hover{ */
+		/* cursor:pointer; */
+		/* } */
+		.btn {
+			background-color: #F44336;
+			color: #fff;
+			padding: 10px 20px;
+			margin: 20px 20px;
+			border-radius: 10px;
+			cursor: pointer;
+			outline: none;
+			border: none;
+			font-weight: bold;
+			align-items: center;
+		}
+
+		[type=radio] {
+			position: absolute;
+			opacity: 0;
+			width: 0;
+			height: 0;
+		}
+
+		[type=radio]+img {
+			cursor: pointer;
+		}
+
+		[type=radio]:checked+img {
+			outline: 2px solid rgb(212, 207, 130);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="form_container">
+		<h3 id='main-heading'>PLEASE FILL THE FORM</h3>
+		<form method="post" action="" name="feedback" id="hospitalForm">
+			<br>
+			<label>
+				<strong>Name :</strong>
+			</label>
+			<input type="text" name="hospital_users" class="input_field"">
+		  <br />
+		  <br>
+		  <label>
+			<strong>Zone :</strong>
+		  </label>
+		  <input type=" text" name="hospital_zone" class="input_field">
+			<br>
+			<br>
+			<label>
+				<strong> Select a feedback :</strong>
+			</label>
+			<div class="smileyOptions" id="smiley-submit">
+				<!--<input type="radio" name="smiley" value="happy"><img src="Happy.png" alt="happy" width="40px">
+				<input type="radio" name="smiley" value="neutral"><img src="Neutral.png" alt="angry" width="40px">
+				<input type="radio" name="smiley" value="sad" ><img src="sad.png" alt="sad" width="40px"> -->
+				<div class="image-wrap">
+					<label class="inner-wrap">
+						<!-- <img type="radio" src="Happy.png" alt ="HAPPY"> -->
+						<input type="radio" name="smiley" value="1.0" id="selected_image">
+						<img src="Happy.png" alt="Happy">
+					</label>
+				</div>
+				<div class="image-wrap">
+					<label class="inner-wrap">
+						<input type="radio" name="smiley" value="0.8" id="selected_image">
+						<img src="Neutral.png" alt="Neutral">
+					</label>
+				</div>
+				<div class="image-wrap">
+					<label class="inner-wrap">
+						<input type="radio" name="smiley" value="0.6" id="selected_image">
+						<img src="Sad.png" alt="Sad">
+					</label>
+				</div>
+			</div>
+	</div>
+	<!-- <input type="reset" name="reset" value="Reset" class="btn"
+	  <input type="submit" name="submit" value="Submit" class="btn" id="smileySubmit"> -->
+	</form>
+	</div>
+
+
+
+	<!-- <script type="text/javascript" src="smiley.js"></script> -->
+
+</body>
+{% endblock %}
